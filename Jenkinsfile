@@ -2,30 +2,27 @@ pipeline {
     agent any
 
     stages {
-        stage('checkout') {
-            steps {
-                git 'https://github.com/BenjaminLesieux/DevOpsTp.git'
-            }
-        }
-
         stage('install node dependencies') {
             steps {
+                sh 'cd /var/jenkins_home/workspace/DevOpsTp'
                 sh 'npm install'
             }
         }
 
         stage('run tests') {
             steps {
+                sh 'cd /var/jenkins_home/workspace/DevOpsTp'
                 sh 'npm run test'
             }
         }
 
         stage('build') {
             steps {
+                sh 'cd /var/jenkins_home/workspace/DevOpsTp'
                 sh 'npm run build'
             }
         }
 
-        // stage publish 
+        // stage publish
     }
 }
