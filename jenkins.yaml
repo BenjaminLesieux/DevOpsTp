@@ -1,0 +1,17 @@
+jenkins:
+  systemMessage: "DevOps Efrei Course"
+
+unclassified:
+  location:
+    url: "http://localhost:8080/"
+
+securityRealm:
+  local:
+    allowsSignup: false
+    users:
+      - id: "admin"
+        password: "admin"
+
+authorizationStrategy:
+  loggedInUsersCanDoAnything: true
+
