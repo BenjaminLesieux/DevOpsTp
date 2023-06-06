@@ -3,6 +3,7 @@ services:
   jenkins:
     image: jenkins/jenkins:lts
     user: root
+    privileged: true
     ports:
       - "8080:8080"
     volumes:
