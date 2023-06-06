@@ -1,6 +1,9 @@
 pipeline {
     agent {
-      docker { image 'node:18.16.0-alpine' }
+        docker {
+            image 'docker:latest'
+            args '-v /var/run/docker.sock:/var/run/docker.sock --privileged'
+        }
     }
     stages {
         stage('Checkout') {
