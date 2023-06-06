@@ -4,10 +4,10 @@ node {
       checkout scm
     }
     stage('Environment') {
-      sh 'sudo git --version'
+      sh 'git --version'
       echo "Branch: ${env.BRANCH_NAME}"
-      sh 'sudo docker -v'
-      sh 'sudo printenv'
+      sh 'docker -v'
+      sh 'printenv'
     }
     stage('Build Docker test'){
      sh 'docker build -t react-test -f Dockerfile.test --no-cache .'
