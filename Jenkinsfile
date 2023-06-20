@@ -1,5 +1,5 @@
 pipeline {
-    agent dockerContainer('node:latest') {
+    agent agent-docker {
         image 'node:latest'
     }
     stages {
