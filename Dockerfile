@@ -1,5 +1,5 @@
 # Extending image
-FROM node:carbon
+FROM node:16.20.0-alpine3.18
 LABEL authors="team 9"
 
 # Create app directory
