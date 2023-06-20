@@ -2,7 +2,7 @@
 FROM node:carbon
 LABEL author="team 9"
 
-ECHO "Starting docker build"
+RUN echo "Starting docker build"
 
 RUN apt-get update
 RUN apt-get upgrade -y
