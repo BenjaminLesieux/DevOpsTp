@@ -27,4 +27,5 @@ ENV NODE_ENV production
 ENV PORT 3000
 ENV PUBLIC_PATH "/"
 
-RUN npm run build
+RUN tsc
+CMD ["vite", "build"]
