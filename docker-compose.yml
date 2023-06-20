@@ -1,15 +1,14 @@
 version: "3"
 services:
-  jenkins:
-    image: jenkins/jenkins:lts
-    user: root
-    privileged: true
+  jenkins_server:
+    build:
+      context: .
+      dockerfile: jenkins.Dockerfile
     ports:
       - "8080:8080"
     volumes:
       - ./jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
-      - /usr/local/bin/docker:/usr/bin/docker
   registry:
     image: registry
     container_name: registry

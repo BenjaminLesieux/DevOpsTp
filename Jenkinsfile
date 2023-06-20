@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker {
+        dockerContainer {
             image 'docker:latest'
             args '-v /var/run/docker.sock:/var/run/docker.sock --privileged'
         }
@@ -36,12 +36,10 @@ pipeline {
         }
         stage('Deploy'){
           steps {
-            if(env.BRANCH_NAME == 'master'){
-                sh 'docker build -t react-app --no-cache .'
-                sh 'docker tag react-app localhost:5000/react-app'
-                sh 'docker push localhost:5000/react-app'
-                sh 'docker rmi -f react-app localhost:5000/react-app'
-            }
+            sh 'docker build -t react-app --no-cache .'
+            sh 'docker tag react-app localhost:5000/react-app'
+            sh 'docker push localhost:5000/react-app'
+            sh 'docker rmi -f react-app localhost:5000/react-app'
           }
         }
     }
