@@ -2,7 +2,6 @@ pipeline {
     agent {
         dockerContainer {
             image 'docker:latest'
-            runArgs '-v /var/run/docker.sock:/var/run/docker.sock --privileged'
         }
     }
     stages {
